@@ -2,7 +2,14 @@ import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
+import gdown
+import os
 
+# 📥 Download model dari Google Drive kalau belum ada
+model_path = "waste_classifier_model.h5"
+if not os.path.exists(model_path):
+    gdown.download("https://drive.google.com/uc?id=YOUR_FILE_ID", model_path, quiet=False)
+    
 # Load model
 model = load_model('waste_classifier_model.h5')
 class_names = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']  # Ganti sesuai class kamu
