@@ -2,13 +2,14 @@ import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
-import gdown
 import os
+import gdown
 
-# 📥 Download model dari Google Drive kalau belum ada
-model_path = "waste_classifier_model.h5"
-if not os.path.exists(model_path):
-    gdown.download("https://drive.google.com/file/d/14vWe25RkQcoAbWz9IZwYr2DnPCt6QzNW/view?usp=sharing", model_path, quiet=False)
+MODEL_PATH = "waste_classifier_model.h5"
+GDRIVE_URL = "https://drive.google.com/file/d/14vWe25RkQcoAbWz9IZwYr2DnPCt6QzNW/view?usp=sharing"
+
+if not os.path.exists(MODEL_PATH):
+    gdown.download(GDRIVE_URL, MODEL_PATH, quiet=False)
     
 # Load model
 model = load_model('waste_classifier_model.h5')
