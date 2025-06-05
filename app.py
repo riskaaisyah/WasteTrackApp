@@ -8,7 +8,7 @@ import os
 # 📥 Download model dari Google Drive kalau belum ada
 model_path = "waste_classifier_model.h5"
 if not os.path.exists(model_path):
-    gdown.download("https://drive.google.com/uc?id=YOUR_FILE_ID", model_path, quiet=False)
+    gdown.download("https://drive.google.com/file/d/14vWe25RkQcoAbWz9IZwYr2DnPCt6QzNW/view?usp=sharing", model_path, quiet=False)
     
 # Load model
 model = load_model('waste_classifier_model.h5')
