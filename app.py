@@ -6,7 +6,7 @@ import os
 import gdown
 
 MODEL_PATH = "waste_classifier_model.h5"
-GDRIVE_URL = "https://drive.google.com/file/d/14vWe25RkQcoAbWz9IZwYr2DnPCt6QzNW/view?usp=sharing"
+GDRIVE_URL = "https://drive.google.com/uc?id=14vWe25RkQcoAbWz9IZwYr2DnPCt6QzNW"
 
 if not os.path.exists(MODEL_PATH):
     gdown.download(GDRIVE_URL, MODEL_PATH, quiet=False)
